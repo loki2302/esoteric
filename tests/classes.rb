@@ -55,6 +55,10 @@ class Magic
     end
   end
 
+  def respond_to?(sym)
+    true
+  end
+
   def __add_numbers(a, b)
     return a + b
   end
