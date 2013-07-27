@@ -20,6 +20,14 @@ class Classes < Test::Unit::TestCase
     assert_equal(3, magic.add_numbers(1, 2))
     assert_equal("no idea", magic.something_special)
   end
+
+  def test_can_call_method_dynamically
+    array = [1, 2, 3]
+    assert_equal(3, array.send(:length))
+
+    modified_array = array.send(:push, 123)
+    assert_equal([1, 2, 3, 123], modified_array)
+  end
 end
 
 class Person
