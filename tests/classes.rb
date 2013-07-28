@@ -13,6 +13,12 @@ class Classes < Test::Unit::TestCase
     assert_equal("loki2302", person.get_name)
   end
 
+  def test_can_use_class_with_attrs
+    person = PersonWithAttrs.new
+    person.name = "loki2302"
+    assert_equal("loki2302", person.name)
+  end
+
   def test_can_handle_method_calls_dynamically
     magic = Magic.new
 
@@ -42,6 +48,10 @@ class Person
   def get_name
     @name
   end
+end
+
+class PersonWithAttrs
+  attr_accessor :name
 end
 
 class Magic
