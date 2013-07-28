@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+    <head>
+	<title>hello there</title>
+	<link rel="stylesheet" type="text/css" href="/assets/bootstrap.min.css" />
+    </head>
+    <body>
+	<div class="container">
+	    <div class="page-header">
+		<h1>hello there</h1>
+	    </div>
+	    <ul class="inline">
+		<li><a href="/">index</a></li>
+		<li><a href="/time">time</a></li>
+		<li><a href="/about">about</a></li>
+		<li><a href="/add/1/2">add numbers</a></li>
+		<li><a href="/json">json</a></li>
+		<li><a href="/robots.txt">robots.txt</a></li>
+		<li><a href="/abracadabra">404</a></li>
+		<li><a href="/add/qwerty/asdfgh">500</a></li>
+	    </ul>
+	    <%= yield %>
+	</div>
+    </body>
+</html>
