@@ -27,4 +27,63 @@ class AppTest extends FunSuite {
     val calculator = new Calculator()
     assert(calculator.add(1, 2) == 3)
   }
+
+  test("can use constructor") {
+    class Greeter(messageTemplate: String) {
+      def sayHi(name: String): String = String.format(messageTemplate, name)
+    }
+
+    val greeter = new Greeter("hello %s")
+    val greeting = greeter.sayHi("loki2302")
+    assert(greeting == "hello loki2302")
+  }
+
+  test("can use short syntax for lambdas") {
+    val add = (a: Int, b: Int) => a + b
+    val result = add(1, 2)
+    assert(result == 3)
+  }
+
+  test("can use long syntax for lambdas") {
+    val add = new Function2[Int, Int, Int] {
+      def apply(a: Int, b: Int): Int = {
+        return a + b
+      }
+    }
+
+    val result = add(1, 2)
+    assert(result == 3)
+  }
+
+  test("can use lambdas to return lambdas") {
+    val plus = (y: Int) => (x: Int) => x + y
+    val result = plus(1)(2)
+    assert(result == 3)
+  }
+
+  test("can use pattern matching") {
+    def testMatch(x: Any): Any = {
+      val result = x match {
+        case 1 => "one"
+        case 2302 => "loki"
+        case "loki" => 2302
+        case _ => "something else"
+      }
+
+      assert(testMatch(1) == "one")
+      assert(testMatch(2302) == "loki")
+      assert(testMatch("loki") == 2302)
+      assert(testMatch(3.14) == "something else")
+    }
+  }
+
+  test("can use xml") {
+    val myXml = 
+    <doc>
+      <item x="333">123</item>
+    </doc>
+
+    assert((myXml \\ "doc" \\ "item").text == "123")
+    assert((myXml \\ "doc" \\ "item" \ "@x").text == "333")
+  }
 }
