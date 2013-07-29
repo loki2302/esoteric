@@ -25,7 +25,7 @@ class AppTest extends FunSuite {
     }
 
     val calculator = new Calculator()
-    assert(calculator.add(1, 2) == 3)
+    assert(calculator.add(1, 2) == 3)    
   }
 
   test("can use constructor") {
@@ -35,6 +35,9 @@ class AppTest extends FunSuite {
 
     val greeter = new Greeter("hello %s")
     val greeting = greeter.sayHi("loki2302")
+    assert(greeting == "hello loki2302")
+    
+    val greeting2 = greeter sayHi "loki2302"
     assert(greeting == "hello loki2302")
   }
 
