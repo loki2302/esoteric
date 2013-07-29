@@ -16,4 +16,15 @@ class AppTest extends FunSuite {
 
     assert(Calculator.add(1, 2) == 3)
   }
+
+  test("can use classes") {
+    class Calculator {
+      def add(a: Int, b: Int): Int = {
+        return a + b
+      }
+    }
+
+    val calculator = new Calculator()
+    assert(calculator.add(1, 2) == 3)
+  }
 }
