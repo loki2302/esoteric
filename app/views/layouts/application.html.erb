@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>RailsExperiment</title>
+  <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+  <%= csrf_meta_tags %>
+</head>
+<body>
+    <div class="container">
+      <div class="page-header">
+        <h1>Hello Rails!</h1>
+      </div>
+      <ul class="inline">
+        <li><%= link_to "Index", controller: "welcome", action: "index" %></li>
+        <li><%= link_to "Add Numbers", controller: "calculator", action: "add_numbers", a: 2, b: 3 %></li>
+        <li><%= link_to "Add Numbers Json", controller: "calculator", action: "add_numbers_json", a: 2, b: 3 %></li>
+      </ul>
+      <%= yield %>
+      <hr>
+      &copy; loki2302
+    </div>
+</body>
+</html>
