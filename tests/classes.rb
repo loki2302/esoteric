@@ -34,6 +34,16 @@ class Classes < Test::Unit::TestCase
     modified_array = array.send(:push, 123)
     assert_equal([1, 2, 3, 123], modified_array)
   end
+
+  def test_can_use_fancy_constructor
+    p = PersonWithConstructor.new
+    assert_equal(nil, p.name)
+    assert_equal(nil, p.age
+
+    p = PersonWithConstructor.new(:name => "loki2302", :age => 123)
+    assert_equal("loki2302", p.name)
+    assert_equal(123, p.age)
+  end
 end
 
 class Person
@@ -71,5 +81,15 @@ class Magic
 
   def __add_numbers(a, b)
     return a + b
+  end
+end
+
+class PersonWithConstructor
+  attr_accessor :name
+  attr_accessor :age
+
+  def initialize(attrs = {})
+    @name = attrs[:name]
+    @age = attrs[:age]
   end
 end
