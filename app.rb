@@ -28,6 +28,17 @@ get "/json" do
     { :name => "loki2302" }.to_json
 end
 
+get "/add_numbers_form" do
+  erb :add_numbers_form
+end
+
+post "/add_numbers_form" do
+  @a = Integer(params[:a])
+  @b = Integer(params[:b])
+  @result = @a + @b
+  erb :add_numbers_form_result
+end
+
 not_found do
     erb :not_found
 end
