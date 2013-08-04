@@ -28,9 +28,14 @@ class BlogService
     session.token
   end
 
-  def ping(token)
+  def get_user_info(token)
     user = get_user_or_throw(token)
-    user.name
+    post_count = user.posts.count
+
+    {
+      :username => user.name,
+      :post_count => post_count
+    }
   end
 
   def create_post(token, text)
@@ -46,6 +51,18 @@ class BlogService
     post.text = text
     post.save!
     post
+  end
+
+  def get_post(token, post_id)
+    user = get_user_or_throw(token)
+    post = get_post_or_throw(user, post_id)
+    post
+  end
+
+  def delete_post(token, post_id)
+    user = get_user_or_throw(token)
+    post = get_post_or_throw(user, post_id)
+    Post.delete(post._id)
   end
 
   private
