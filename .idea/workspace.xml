@@ -2,16 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fc8318c2-02ab-4f28-aa5c-eace47d433d4" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/post.rb" afterPath="$PROJECT_DIR$/lib/post.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/test_user.rb" afterPath="$PROJECT_DIR$/test/test_user.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/user.rb" afterPath="$PROJECT_DIR$/lib/user.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/blog_service.rb" afterPath="$PROJECT_DIR$/lib/blog_service.rb" />
     </list>
     <ignored path="ruby-mongodb-experiment.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/Dummy.txt" changelist="fc8318c2-02ab-4f28-aa5c-eace47d433d4" time="1375591822749" ignored="false" />
     <file path="/user.rb" changelist="fc8318c2-02ab-4f28-aa5c-eace47d433d4" time="1375592473149" ignored="false" />
     <file path="/session.rb" changelist="fc8318c2-02ab-4f28-aa5c-eace47d433d4" time="1375592854941" ignored="false" />
-    <file path="/blog_service.rb" changelist="fc8318c2-02ab-4f28-aa5c-eace47d433d4" time="1375595217273" ignored="false" />
+    <file path="/blog_service.rb" changelist="fc8318c2-02ab-4f28-aa5c-eace47d433d4" time="1375596054816" ignored="false" />
     <file path="/test_blog_service.rb" changelist="fc8318c2-02ab-4f28-aa5c-eace47d433d4" time="1375595484311" ignored="false" />
     <file path="/test_user.rb" changelist="fc8318c2-02ab-4f28-aa5c-eace47d433d4" time="1375593288039" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -69,10 +67,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="blog_service.rb" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="blog_service.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/blog_service.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="81" column="32" selection-start="1580" selection-end="1606" vertical-scroll-proportion="0.0">
+            <state line="19" column="63" selection-start="482" selection-end="482" vertical-scroll-proportion="0.7307692">
               <folding />
             </state>
           </provider>
@@ -105,10 +103,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test_blog_service.rb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="test_blog_service.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/test_blog_service.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="64" column="27" selection-start="1618" selection-end="1618" vertical-scroll-proportion="0.7692308">
+            <state line="64" column="42" selection-start="1618" selection-end="1618" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -145,8 +143,8 @@
         <option value="$PROJECT_DIR$/lib/user.rb" />
         <option value="$PROJECT_DIR$/lib/session.rb" />
         <option value="$PROJECT_DIR$/test/test_user.rb" />
-        <option value="$PROJECT_DIR$/lib/blog_service.rb" />
         <option value="$PROJECT_DIR$/test/test_blog_service.rb" />
+        <option value="$PROJECT_DIR$/lib/blog_service.rb" />
       </list>
     </option>
   </component>
@@ -533,16 +531,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/blog_service.rb">
+    <entry file="file://$PROJECT_DIR$/test/test_blog_service.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="81" column="32" selection-start="1580" selection-end="1606" vertical-scroll-proportion="0.0">
+        <state line="64" column="42" selection-start="1618" selection-end="1618" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/test_blog_service.rb">
+    <entry file="file://$PROJECT_DIR$/lib/blog_service.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="64" column="27" selection-start="1618" selection-end="1618" vertical-scroll-proportion="0.7692308">
+        <state line="19" column="63" selection-start="482" selection-end="482" vertical-scroll-proportion="0.7307692">
           <folding />
         </state>
       </provider>

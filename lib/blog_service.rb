@@ -15,7 +15,7 @@ class BlogService
   end
 
   def authenticate(username)
-    user = User.where(:name => username).first
+    user = User.find_by_name(username)
     if user.nil?
       user = User.new(:name => username)
       user.save!
@@ -51,7 +51,7 @@ class BlogService
   private
 
   def get_user_or_throw(token)
-    session = Session.where(:token => token).first
+    session = Session.find_by_token(token)
     if session.nil?
       raise InvalidSessionTokenException
     end
@@ -60,7 +60,7 @@ class BlogService
   end
 
   def get_post_or_throw(user, post_id)
-    post = Post.where(:_id => post_id).first
+    post = Post.find(post_id)
     if post.nil?
       raise NoSuchPostException
     end
