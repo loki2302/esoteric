@@ -91,9 +91,9 @@ class TestBlogService < Test::Unit::TestCase
 
   def test_cant_get_post_that_does_not_exist
     token = @service.authenticate("loki2302")
-    assert_raise(NoSuchPostException) {
+    assert_raise(NoSuchPostException) do
       @service.get_post(token, "123")
-    }
+    end
   end
 
   def test_can_delete_post

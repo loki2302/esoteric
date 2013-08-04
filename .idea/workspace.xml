@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fc8318c2-02ab-4f28-aa5c-eace47d433d4" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/blog_service.rb" afterPath="$PROJECT_DIR$/lib/blog_service.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/test_blog_service.rb" afterPath="$PROJECT_DIR$/test/test_blog_service.rb" />
     </list>
     <ignored path="ruby-mongodb-experiment.iws" />
@@ -11,7 +10,7 @@
     <file path="/user.rb" changelist="fc8318c2-02ab-4f28-aa5c-eace47d433d4" time="1375592473149" ignored="false" />
     <file path="/session.rb" changelist="fc8318c2-02ab-4f28-aa5c-eace47d433d4" time="1375592854941" ignored="false" />
     <file path="/blog_service.rb" changelist="fc8318c2-02ab-4f28-aa5c-eace47d433d4" time="1375596691599" ignored="false" />
-    <file path="/test_blog_service.rb" changelist="fc8318c2-02ab-4f28-aa5c-eace47d433d4" time="1375596916269" ignored="false" />
+    <file path="/test_blog_service.rb" changelist="fc8318c2-02ab-4f28-aa5c-eace47d433d4" time="1375597016299" ignored="false" />
     <file path="/test_user.rb" changelist="fc8318c2-02ab-4f28-aa5c-eace47d433d4" time="1375593288039" ignored="false" />
     <file path="/temp.rb" changelist="fc8318c2-02ab-4f28-aa5c-eace47d433d4" time="1375596669216" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -108,7 +107,7 @@
       <file leaf-file-name="test_blog_service.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test/test_blog_service.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="101" column="16" selection-start="2759" selection-end="2759" vertical-scroll-proportion="0.3846154">
+            <state line="101" column="3" selection-start="2749" selection-end="2749" vertical-scroll-proportion="0.3846154">
               <folding />
             </state>
           </provider>
@@ -399,7 +398,7 @@
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32967034" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32967034" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -542,7 +541,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test/test_blog_service.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="101" column="16" selection-start="2759" selection-end="2759" vertical-scroll-proportion="0.3846154">
+        <state line="101" column="3" selection-start="2749" selection-end="2749" vertical-scroll-proportion="0.3846154">
           <folding />
         </state>
       </provider>
