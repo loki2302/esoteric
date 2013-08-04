@@ -62,7 +62,7 @@ class BlogService
   def delete_post(token, post_id)
     user = get_user_or_throw(token)
     post = get_post_or_throw(user, post_id)
-    Post.delete(post._id)
+    post.destroy
   end
 
   private
