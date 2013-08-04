@@ -1,12 +1,13 @@
 require "mongo_mapper"
 
-class Post
+class Session
   include MongoMapper::Document
 
-  key :text, String
+  key :token, String
   belongs_to :user
 
   def to_s
-    "Post{#{@_id}, #{@text}} by #{@user}"
+    "Session{#{@_id}, #{@token}, #{@user}}"
   end
 end
+
