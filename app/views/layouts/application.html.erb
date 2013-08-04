@@ -13,7 +13,8 @@
       <ul class="inline">
         <li><%= link_to "Index", controller: "welcome", action: "index" %></li>
         <li><%= link_to "Add Numbers", controller: "calculator", action: "add_numbers", a: 2, b: 3 %></li>
-        <li><%= link_to "Add Numbers Json", controller: "calculator", action: "add_numbers_json", a: 2, b: 3 %></li>
+        <li><a href="/calculator/add/2/3.json">Add Numbers Json (implicit)</a></li>
+        <li><%= link_to "Add Numbers Json (explicit)", controller: "calculator", action: "add_numbers_json", a: 2, b: 3 %></li>
       </ul>
       <%= yield %>
       <hr>
