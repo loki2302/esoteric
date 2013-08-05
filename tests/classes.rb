@@ -38,7 +38,7 @@ class Classes < Test::Unit::TestCase
   def test_can_use_fancy_constructor
     p = PersonWithConstructor.new
     assert_equal(nil, p.name)
-    assert_equal(nil, p.age
+    assert_equal(nil, p.age)
 
     p = PersonWithConstructor.new(:name => "loki2302", :age => 123)
     assert_equal("loki2302", p.name)
