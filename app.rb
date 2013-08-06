@@ -5,14 +5,17 @@ def main
   first_task = ProcessLettersTask.new("http://www.nhl.com/ice/playersearch.htm")
   context = CrawlerContext.new
   context.submit_task(first_task)
+  processed_task_count = 0
   loop do
     task = context.get_task
     if task == nil
       break
     end
 
-    puts "Running #{task}"
+    remaining_task_count = context.get_task_count
+    puts "[#{processed_task_count}/#{remaining_task_count}] Running #{task}"
     task.run(context)
+    processed_task_count += 1
   end
 end
 
@@ -42,10 +45,43 @@ class ProcessLetterTask
   end
 
   def run(context)
+    doc = Nokogiri::HTML(open(@uri))
+    doc.css("table.data > tbody > tr a[href*=player]").each do |link|
+      player_uri = URI.join(@uri, link["href"])
+      task = ProcessPlayerTask.new(player_uri)
+      context.submit_task(task)
+    end
+
+    if !@process_pagination
+      return
+    end
+
+    doc.css(".pageNumbers > a").each do |link|
+      page_uri = URI.join(@uri, link["href"])
+      task = ProcessLetterTask.new(page_uri, false)
+      context.submit_task(task)
+    end
   end
 
   def to_s
     "ProcessLetterTask{#{@uri}}"
+  end
+end
+
+class ProcessPlayerTask
+  def initialize(uri)
+    @uri = uri
+  end
+
+  def run(context)
+    doc = Nokogiri::HTML(open(@uri))
+    name_element = doc.css("#tombstone h1 *").first
+    player_name = name_element.inner_text.strip # TODO: how do I remove player number?
+    puts "Got player: '#{player_name}'"
+  end
+
+  def to_s
+    "ProcessPlayerTask{#{@uri}}"
   end
 end
 
@@ -58,8 +94,12 @@ class CrawlerContext
     @tasks.push(task)
   end
 
-  def get_task()
+  def get_task
     @tasks.pop(true) rescue nil
+  end
+
+  def get_task_count
+    @tasks.length
   end
 end
 
