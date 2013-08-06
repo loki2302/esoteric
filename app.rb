@@ -1,3 +1,6 @@
+require "rubygems"
+require "bundler/setup"
+
 require "nokogiri"
 require "open-uri"
 
@@ -12,8 +15,8 @@ def main
       break
     end
 
-    remaining_task_count = context.get_task_count
-    puts "[#{processed_task_count}/#{remaining_task_count}] Running #{task}"
+    total_task_count = context.get_total_task_count
+    puts "[#{processed_task_count}/#{total_task_count}] Running #{task}"
     task.run(context)
     processed_task_count += 1
   end
@@ -88,18 +91,20 @@ end
 class CrawlerContext
   def initialize
     @tasks = Queue.new
+    @total_task_count = 0
   end
 
   def submit_task(task)
     @tasks.push(task)
+    @total_task_count += 1
   end
 
   def get_task
     @tasks.pop(true) rescue nil
   end
 
-  def get_task_count
-    @tasks.length
+  def get_total_task_count
+    @total_task_count
   end
 end
 
