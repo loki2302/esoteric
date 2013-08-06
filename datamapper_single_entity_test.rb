@@ -2,8 +2,8 @@ require "test/unit"
 require "data_mapper"
 require "dm-migrations"
 
-class DataMapperTest < Test::Unit::TestCase
-  def setup    
+class DataMapperSingleEntityTest < Test::Unit::TestCase
+  def setup
     DataMapper::Logger.new($stdout, :debug)
     DataMapper.setup(:default, "sqlite::memory:")
     DataMapper.auto_migrate!
@@ -56,7 +56,7 @@ class DataMapperTest < Test::Unit::TestCase
     assert_equal("not loki2302", user.name)
   end
 
-  def test_can_delete_use
+  def test_can_delete_user
     user = User.new(:name => "loki2302")
     user.save!
     assert_equal(1, User.count)
