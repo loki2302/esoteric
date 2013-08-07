@@ -1,13 +1,13 @@
-require "rubygems"
-require "bundler/setup"
+require 'rubygems'
+require 'bundler/setup'
 
-require "./crawler_context"
-require "./process_letters_task"
-require "./process_letter_task"
-require "./process_player_task"
+require './crawler_context'
+require './process_letters_task'
+require './process_letter_task'
+require './process_player_task'
 
 def main
-  first_task = ProcessLettersTask.new("http://www.nhl.com/ice/playersearch.htm")
+  first_task = ProcessLettersTask.new('http://www.nhl.com/ice/playersearch.htm')
   context = CrawlerContext.new
   context.submit_task(first_task)
 

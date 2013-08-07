@@ -1,3 +1,3 @@
 task :default do
-  require "./app.rb"
+  require './app.rb'
 end

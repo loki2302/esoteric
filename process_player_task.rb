@@ -1,5 +1,5 @@
-require "nokogiri"
-require "open-uri"
+require 'nokogiri'
+require 'open-uri'
 
 class ProcessPlayerTask
   def initialize(uri)
@@ -8,7 +8,7 @@ class ProcessPlayerTask
 
   def run(context)
     doc = Nokogiri::HTML(open(@uri))
-    name_element = doc.css("#tombstone h1 *").first
+    name_element = doc.css('#tombstone h1 *').first
     player_name = name_element.inner_text.strip # TODO: how do I remove player number?
     context.submit_result(player_name)
   end
