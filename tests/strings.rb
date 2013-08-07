@@ -39,4 +39,13 @@ class Strings < Test::Unit::TestCase
 
     assert_equal(8, "loki2302".length)
   end
+
+  def difference_between_single_and_double_quotes
+    x = 2302
+    assert_equal('loki2302', "loki#{x}")
+    assert_equal('loki#{x}', 'loki#{x}')
+
+    assert_equal('a\nb', 'a\nb')
+    assert_not_equal('a\nb', "a\nb")
+  end
 end
