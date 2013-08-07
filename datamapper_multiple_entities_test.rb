@@ -29,6 +29,26 @@ class DataMapperMultipleEntitiesTest < Test::Unit::TestCase
     assert_equal(1, user.posts.count)
     assert_equal(1, user.posts.first.id)
   end
+
+  def test
+    user1 = PostingUser.create(:name => "loki2302")
+    user1post1 = Post.create(:text => "loki2302 post1", :posting_user => user1)
+    user1post2 = Post.create(:text => "loki2302 post2", :posting_user => user1)
+
+    user2 = PostingUser.create(:name => "qwerty")
+    user2post1 = Post.create(:text => "qwerty post1", :posting_user => user2)
+    user2post2 = Post.create(:text => "qwerty post2", :posting_user => user2)
+    user2post3 = Post.create(:text => "qwerty post3", :posting_user => user2)
+
+    assert_equal(5, Post.count)
+    assert_equal(2, user1.posts.count)
+    assert_equal(3, user2.posts.count)
+
+    assert_equal(5, Post.count(:text.like => "%post%"))
+    assert_equal(2, Post.count(:text.like => "%post1%"))
+    assert_equal(2, Post.count(:text.like => "%loki2302%"))
+    assert_equal(3, Post.count(:text.like => "%qwerty%"))
+  end
 end
 
 class PostingUser

@@ -64,6 +64,14 @@ class DataMapperSingleEntityTest < Test::Unit::TestCase
     user.destroy
     assert_equal(0, User.count)
   end
+
+  def test_can_find_user_by_name
+    user1 = User.create(:name => "loki2302_1")
+    user2 = User.create(:name => "loki2302_2")
+
+    assert_equal(user1.id, User.first(:name => "loki2302_1").id)
+    assert_equal(user2.id, User.first(:name => "loki2302_2").id)
+  end
 end
 
 class User
