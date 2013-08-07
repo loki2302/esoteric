@@ -19,14 +19,6 @@ class Classes < Test::Unit::TestCase
     assert_equal("loki2302", person.name)
   end
 
-  def test_can_handle_method_calls_dynamically
-    magic = Magic.new
-
-    assert_equal("saying hello", magic.hello)
-    assert_equal(3, magic.add_numbers(1, 2))
-    assert_equal("no idea", magic.something_special)
-  end
-
   def test_can_call_method_dynamically
     array = [1, 2, 3]
     assert_equal(3, array.send(:length))
@@ -62,26 +54,6 @@ end
 
 class PersonWithAttrs
   attr_accessor :name
-end
-
-class Magic
-  def method_missing(sym, *args, &block)
-    if sym == :hello
-      return "saying hello"
-    elsif sym == :add_numbers
-      return __add_numbers(*args)
-    else
-      return "no idea"
-    end
-  end
-
-  def respond_to?(sym)
-    true
-  end
-
-  def __add_numbers(a, b)
-    return a + b
-  end
 end
 
 class PersonWithConstructor
