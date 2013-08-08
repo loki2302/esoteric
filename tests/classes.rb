@@ -41,16 +41,19 @@ class Classes < Test::Unit::TestCase
     counter1 = Counter.new
     counter2 = Counter.new
     assert_equal(0, Counter.get_class_count)
+    assert_equal(0, Counter::get_class_count)
     assert_equal(0, counter1.get_instance_count)
     assert_equal(0, counter2.get_instance_count)
 
     counter1.tick
     assert_equal(1, Counter.get_class_count)
+    assert_equal(1, Counter::get_class_count)
     assert_equal(1, counter1.get_instance_count)
     assert_equal(0, counter2.get_instance_count)
 
     counter2.tick
     assert_equal(2, Counter.get_class_count)
+    assert_equal(2, Counter::get_class_count)
     assert_equal(1, counter1.get_instance_count)
     assert_equal(1, counter2.get_instance_count)
   end
