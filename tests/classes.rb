@@ -57,6 +57,14 @@ class Classes < Test::Unit::TestCase
     assert_equal(1, counter1.get_instance_count)
     assert_equal(1, counter2.get_instance_count)
   end
+
+  def test_can_use_hand_made_properties
+    person = PersonWithHandMadeProperty.new
+    assert_equal(nil, person.name)
+
+    person.name = 'loki2302'
+    assert_equal('loki2302', person.name)
+  end
 end
 
 class Person
@@ -105,5 +113,15 @@ class Counter
 
   def get_instance_count
     @instance_count
+  end
+end
+
+class PersonWithHandMadeProperty
+  def name=(name)
+    @name = name
+  end
+
+  def name
+    @name
   end
 end
