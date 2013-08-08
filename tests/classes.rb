@@ -36,6 +36,24 @@ class Classes < Test::Unit::TestCase
     assert_equal("loki2302", p.name)
     assert_equal(123, p.age)
   end
+
+  def test_can_use_static_members
+    counter1 = Counter.new
+    counter2 = Counter.new
+    assert_equal(0, Counter.get_class_count)
+    assert_equal(0, counter1.get_instance_count)
+    assert_equal(0, counter2.get_instance_count)
+
+    counter1.tick
+    assert_equal(1, Counter.get_class_count)
+    assert_equal(1, counter1.get_instance_count)
+    assert_equal(0, counter2.get_instance_count)
+
+    counter2.tick
+    assert_equal(2, Counter.get_class_count)
+    assert_equal(1, counter1.get_instance_count)
+    assert_equal(1, counter2.get_instance_count)
+  end
 end
 
 class Person
@@ -63,5 +81,26 @@ class PersonWithConstructor
   def initialize(attrs = {})
     @name = attrs[:name]
     @age = attrs[:age]
+  end
+end
+
+class Counter
+  @@class_count = 0
+
+  def initialize
+    @instance_count = 0
+  end
+
+  def tick
+    @@class_count += 1
+    @instance_count += 1
+  end
+
+  def self.get_class_count
+    @@class_count
+  end
+
+  def get_instance_count
+    @instance_count
   end
 end
