@@ -19,8 +19,13 @@ class ProcessLetterTask
       return
     end
 
-    doc.css('.pageNumbers > a').each do |link|
-      page_uri = URI.join(@uri, link['href'])
+    page_uris = doc.css('.pageNumbers > a').map do |link|
+      URI.join(@uri, link['href'])
+    end
+
+    page_uris.uniq!
+
+    page_uris.each do |page_uri|
       task = ProcessLetterTask.new(page_uri, false)
       context.submit_task(task)
     end

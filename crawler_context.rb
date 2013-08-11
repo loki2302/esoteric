@@ -39,4 +39,8 @@ class CrawlerContext
   def should_stop
     @pending_task_count == 0
   end
+
+  def get_player_count
+    @player_count
+  end
 end

@@ -11,7 +11,7 @@ def main
   context = CrawlerContext.new
   context.submit_task(first_task)
 
-  num_of_threads = 40
+  num_of_threads = 80
   threads = []
   num_of_threads.times do
     thread = Thread.new do
@@ -30,9 +30,18 @@ def main
     threads << thread
   end
 
+  start_time = Time.now
+
   threads.each do |thread|
     thread.join
   end
+
+  end_time = Time.now
+
+  run_time = end_time - start_time
+  player_count = context.get_player_count
+
+  puts "Fetched #{player_count} players in #{run_time} seconds"
 end
 
 main
