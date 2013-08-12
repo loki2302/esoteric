@@ -45,7 +45,7 @@ class Arrays < Test::Unit::TestCase
     assert_equal(5, a[4])
   end
 
-  def test_can_check_if_item_is_in_array
+  def test_can_get_array_item_index
     a = [1, 2, 3]
 
     index = a.find_index(2)
@@ -53,6 +53,12 @@ class Arrays < Test::Unit::TestCase
 
     index = a.find_index(333)
     assert_nil(index)
+  end
+
+  def test_can_check_if_item_is_in_array
+    a = [1, 2, 3]
+    assert(a.include?(2))
+    assert(!a.include?(2302))
   end
 
   def test_can_map_array
