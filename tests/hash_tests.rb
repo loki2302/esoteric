@@ -1,6 +1,6 @@
 require 'test/unit'
 
-class Hashes < Test::Unit::TestCase
+class HashTests < Test::Unit::TestCase
   def test_can_define_hash
     h = {"name" => "loki2302", "age" => 33}
     assert_equal({"name" => "loki2302", "age" => 33}, h)

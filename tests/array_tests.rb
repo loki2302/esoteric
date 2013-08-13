@@ -1,6 +1,6 @@
 require 'test/unit'
 
-class Arrays < Test::Unit::TestCase
+class ArrayTests < Test::Unit::TestCase
   def test_can_define_array
     a = [1, 2, 3]
     assert_equal([1, 2, 3], a)

@@ -1,6 +1,6 @@
 require "test/unit"
 
-class ThreadsTest < Test::Unit::TestCase
+class ThreadTests < Test::Unit::TestCase
   def test_threads
     x = []
     t = Thread.new do      

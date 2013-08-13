@@ -1,6 +1,6 @@
 require 'test/unit'
 
-class Types < Test::Unit::TestCase
+class TypeTests < Test::Unit::TestCase
   def test_understand_types
     assert_equal(Fixnum, 123.class)
     assert_equal(String, "loki2302".class)

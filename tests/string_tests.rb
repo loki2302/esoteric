@@ -1,6 +1,6 @@
 require 'test/unit'
 
-class Strings < Test::Unit::TestCase
+class StringTests < Test::Unit::TestCase
   def test_strings
     x = "loki2302"
     assert_equal("loki2302", x)

@@ -1,6 +1,6 @@
 require 'test/unit'
 
-class Ranges < Test::Unit::TestCase
+class RangeTests < Test::Unit::TestCase
   def test_can_create_arrays_from_ranges
     assert_equal([1, 2, 3], (1..3).to_a)
 

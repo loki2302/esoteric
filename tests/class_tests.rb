@@ -1,6 +1,6 @@
 require "test/unit"
 
-class Classes < Test::Unit::TestCase
+class ClassTests < Test::Unit::TestCase
   def test_can_use_class
     person = Person.new("loki2302")
     assert_equal(Person, person.class)

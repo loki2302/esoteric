@@ -1,6 +1,6 @@
 require "test/unit"
 
-class Functions < Test::Unit::TestCase
+class FunctionTests < Test::Unit::TestCase
   def test_can_use_function
     def add_numbers(a, b)
       a + b

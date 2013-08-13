@@ -1,6 +1,6 @@
 require 'test/unit'
 
-class Modules < Test::Unit::TestCase
+class ModuleTests < Test::Unit::TestCase
   def test_can_use_modules_in_classes
     x = TheClass.new
     assert_equal(234, x.func)

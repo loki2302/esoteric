@@ -1,6 +1,6 @@
 require 'test/unit'
 
-class Enumerables < Test::Unit::TestCase
+class EnumerableTests < Test::Unit::TestCase
   def test_can_check_if_all_items_are_something
     a = [1, 2, 3]
 

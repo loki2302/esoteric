@@ -1,6 +1,6 @@
 require 'test/unit'
 
-class Files < Test::Unit::TestCase
+class FileTests < Test::Unit::TestCase
   def test_can_read_and_write_text_file
     File.delete("1.txt") if File.exists?("1.txt")
 
