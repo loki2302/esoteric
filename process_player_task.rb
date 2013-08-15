@@ -9,7 +9,8 @@ class ProcessPlayerTask
   def run(context)
     doc = Nokogiri::HTML(open(@uri))
     name_element = doc.css('#tombstone h1 *').first
-    player_name = name_element.inner_text.strip # TODO: how do I remove player number?
+    name_element.css("*").remove
+    player_name = name_element.inner_text.sub("\u00a0", ' ').strip
     context.submit_result(player_name)
   end
 
