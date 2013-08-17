@@ -89,4 +89,30 @@ class AppTest extends FunSuite {
     assert((myXml \\ "doc" \\ "item").text == "123")
     assert((myXml \\ "doc" \\ "item" \ "@x").text == "333")
   }
+
+  test("can use for loops") {
+    var s = 0
+    for(i <- 1 to 3) {
+      s += i
+    }
+    assert(s == 6)
+  }
+
+  test("can use closures") {
+    var s = 0
+    val adder = (i:Int) => s += i
+    for(i <- 1 to 3) {
+      adder(i)
+    }
+    assert(s == 6)
+  }
+
+  test("can iterate over array items") {
+    val items = Array(1, 2, 3)
+    var s = 0
+    for(item <- items) {
+      s += item
+    }
+    assert(s == 6)
+  }
 }
