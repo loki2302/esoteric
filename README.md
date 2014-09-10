@@ -1,6 +1,4 @@
 learning-scala
 ==============
-1
-`sbt run` to run the application
 
-`sbt test` to run tests
+`./gradlew clean run` to run the app. `./gradlew clean test` to run the tests.

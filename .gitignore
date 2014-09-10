@@ -14,3 +14,7 @@ project/plugins/project/
 
 project
 target
+*.iml
+.gradle
+build
+.idea
