@@ -19,4 +19,16 @@ class StringInterpolationTest {
     val message = f"hello, $username%s!"
     assertEquals("hello, loki2302!", message)
   }
+
+  @Test
+  def canUseStringMagic(): Unit = {
+    val result = magic"qwerty"
+    assertEquals("hello", result)
+  }
+
+  implicit class StringMagic(val sc: StringContext) {
+    def magic(args: Any*): String = {
+      return "hello"
+    }
+  }
 }
