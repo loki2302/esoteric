@@ -30,4 +30,12 @@ public class ClosuresTest {
         def twice = { 2 * it }
         assertEquals 10, twice(5)
     }
+
+    @Test
+    public void canUseCurrying() {
+        def add = { a, b -> a + b }
+        def addOne = add.curry(1)
+
+        assertEquals 3, addOne(2)
+    }
 }
