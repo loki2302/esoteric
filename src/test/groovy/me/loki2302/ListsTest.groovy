@@ -4,7 +4,7 @@ import org.junit.Test
 
 import static org.junit.Assert.*
 
-class ListsTest {
+public class ListsTest {
     @Test
     public void canHaveList() {
         def list = [2, 3, 4]
@@ -29,4 +29,6 @@ class ListsTest {
         assertEquals 3, sublist.first()
         assertEquals 123, sublist.last()
     }
+
+
 }
