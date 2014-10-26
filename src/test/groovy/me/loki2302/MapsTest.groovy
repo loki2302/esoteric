@@ -2,7 +2,7 @@ package me.loki2302
 
 import org.junit.Test
 
-import static org.junit.Assert.assertTrue
+import static org.junit.Assert.*
 
 public class MapsTest {
     @Test
@@ -14,8 +14,8 @@ public class MapsTest {
         ]
         assertTrue map instanceof Map
         assertEquals 3, map.size()
-        assertEquals 1, map["one"]
-        assertEquals 2, map["two"]
-        assertEquals 3, map["three"]
+        assertEquals 1, map['one']
+        assertEquals 2, map['two']
+        assertEquals 3, map['three']
     }
 }

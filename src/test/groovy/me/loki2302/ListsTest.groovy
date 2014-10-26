@@ -29,6 +29,4 @@ public class ListsTest {
         assertEquals 3, sublist.first()
         assertEquals 123, sublist.last()
     }
-
-
 }
