@@ -38,4 +38,17 @@ public class ClosuresTest {
 
         assertEquals 3, addOne(2)
     }
+
+    @Test
+    public void canUseDelegate() {
+        def closure = { add(2); add(3); }
+
+        def list = []
+        closure.delegate = list
+        closure()
+
+        assertEquals 2, list.size()
+        assertEquals 2, list.first()
+        assertEquals 3, list.last()
+    }
 }
