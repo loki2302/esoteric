@@ -35,8 +35,8 @@ public class DslTest {
     public void dummy() {
 
         def person = Person.make {
-            name 'loki2302'
-            age 40
+            name = 'loki2302' // direct field access
+            age 40 // setter access
 
             comment '''
 1. Drinks a lot of coffee
