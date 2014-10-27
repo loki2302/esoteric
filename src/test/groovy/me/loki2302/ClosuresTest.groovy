@@ -51,4 +51,15 @@ public class ClosuresTest {
         assertEquals 2, list.first()
         assertEquals 3, list.last()
     }
+
+    @Test
+    public void canUseMethodReference() {
+        def list = []
+        def addToList = list.&add
+        addToList 123
+        addToList 222
+        assertEquals 2, list.size()
+        assertEquals 123, list[0]
+        assertEquals 222, list[1]
+    }
 }
