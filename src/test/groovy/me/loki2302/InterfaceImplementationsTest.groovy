@@ -3,7 +3,7 @@ package me.loki2302
 import org.junit.Test
 import static org.junit.Assert.*
 
-public class InterfaceImplementationsTest {
+class InterfaceImplementationsTest {
     @Test
     public void canUseClosureToImplementInterface() {
         I obj = { Object[] args -> "$args".toString() } as I
@@ -13,7 +13,7 @@ public class InterfaceImplementationsTest {
     }
 
     @Test
-    public void canClosureMapToImplementInterface() {
+    void canClosureMapToImplementInterface() {
         I obj = [
                 func: { Object[] args -> 'func' },
                 otherFunc: { Object[] args -> "otherFunc $args".toString() }
@@ -23,7 +23,7 @@ public class InterfaceImplementationsTest {
         assertEquals 'otherFunc [123]', obj.otherFunc(123)
     }
 
-    public interface I {
+    interface I {
         String func()
         String otherFunc(int a)
     }

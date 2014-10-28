@@ -3,9 +3,9 @@ package me.loki2302
 import org.junit.Test
 import static org.junit.Assert.*
 
-public class RangesTest {
+class RangesTest {
     @Test
-    public void canUseRange() {
+    void canUseRange() {
         def range = 1..3
 
         assertTrue range instanceof List

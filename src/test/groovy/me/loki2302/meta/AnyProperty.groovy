@@ -1,6 +1,6 @@
 package me.loki2302.meta
 
-public class AnyProperty {
+class AnyProperty {
     def map = [:]
 
     def propertyMissing(String name, value) {

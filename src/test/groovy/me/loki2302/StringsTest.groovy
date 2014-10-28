@@ -3,16 +3,16 @@ package me.loki2302
 import org.junit.Test
 import static org.junit.Assert.*
 
-public class StringsTest {
+class StringsTest {
     @Test
-    public void canHaveAString() {
+    void canHaveAString() {
         def s = 'hello'
         assertTrue s instanceof String
         assertEquals 'hello', s
     }
 
     @Test
-    public void canHaveAMultilineString() {
+    void canHaveAMultilineString() {
         def s = '''\
 Line one
 Line two'''
@@ -21,7 +21,7 @@ Line two'''
     }
 
     @Test
-    public void canHaveAGString() {
+    void canHaveAGString() {
         def name = 'loki2302'
         def s = "Hi, ${name}!"
         assertTrue s instanceof GString

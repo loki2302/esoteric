@@ -41,7 +41,7 @@ public class EmbeddingTest {
     }
 
     public static abstract class MyScriptBase extends Script {
-        public void add(int x) {
+        void add(int x) {
             List<Integer> list = (List<Integer>)getBinding().getVariable("list");
             list.add(x);
         }

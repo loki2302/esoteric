@@ -4,9 +4,9 @@ import org.junit.Test
 
 import static org.junit.Assert.*
 
-public class MapsTest {
+class MapsTest {
     @Test
-    public void canHaveMap() {
+    void canHaveMap() {
         def map = [
                 one: 1,
                 two: 2,

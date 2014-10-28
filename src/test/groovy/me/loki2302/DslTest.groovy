@@ -3,9 +3,9 @@ package me.loki2302
 import org.junit.Test
 import static org.junit.Assert.*
 
-public class DslTest {
+class DslTest {
 
-    public static class Person {
+    static class Person {
         String name
         int age
         String comment
@@ -32,7 +32,7 @@ public class DslTest {
     }
 
     @Test
-    public void dummy() {
+    void dummy() {
 
         def person = Person.make {
             name = 'loki2302' // direct field access

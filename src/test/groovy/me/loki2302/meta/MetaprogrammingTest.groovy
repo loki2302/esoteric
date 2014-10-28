@@ -6,15 +6,15 @@ import org.junit.Test
 
 import static org.junit.Assert.assertEquals
 
-public class MetaprogrammingTest {
+class MetaprogrammingTest {
     @Test
-    public void canHandleMethodCallsDynamically() {
+    void canHandleMethodCallsDynamically() {
         def anyMethod = new AnyMethod()
         assertEquals 'hello', anyMethod.hello()
     }
 
     @Test
-    public void canHandlePropertyAccessDynamically() {
+    void canHandlePropertyAccessDynamically() {
         def anyProperty = new AnyProperty()
         anyProperty.x = 123
         anyProperty.s = 'qwerty'
@@ -24,7 +24,7 @@ public class MetaprogrammingTest {
     }
 
     @Test
-    public void canUseASTTransformation() {
+    void canUseASTTransformation() {
         def transformTestHelper = new TransformTestHelper(
                 new PrependPrintlnASTTransformation(),
                 CompilePhase.SEMANTIC_ANALYSIS);

@@ -4,9 +4,9 @@ import groovy.transform.builder.Builder
 import org.junit.Test
 import static org.junit.Assert.*
 
-public class BuilderTransformationTest {
+class BuilderTransformationTest {
     @Test
-    public void canUseBuilderTransformation() {
+    void canUseBuilderTransformation() {
         Person person = Person.builder()
                 .id(123)
                 .name('loki2302')
@@ -17,7 +17,7 @@ public class BuilderTransformationTest {
     }
 
     @Builder
-    public static class Person {
+    static class Person {
         int id
         String name
     }

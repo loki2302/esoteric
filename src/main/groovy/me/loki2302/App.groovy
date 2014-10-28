@@ -1,7 +1,7 @@
 package me.loki2302
 
-public class App {
-    public static void main(String[] args) {
+class App {
+    static void main(String[] args) {
         println "hello world"
     }
 }

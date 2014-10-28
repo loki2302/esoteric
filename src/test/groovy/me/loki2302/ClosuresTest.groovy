@@ -3,9 +3,9 @@ package me.loki2302
 import org.junit.Test
 import static org.junit.Assert.*
 
-public class ClosuresTest {
+class ClosuresTest {
     @Test
-    public void canModifyExternalScopeWithClosure() {
+    void canModifyExternalScopeWithClosure() {
         def x = 0
         def closure = { x = 1 }
 
@@ -14,25 +14,25 @@ public class ClosuresTest {
     }
 
     @Test
-    public void canGetValueFromClosure() {
+    void canGetValueFromClosure() {
         def closure = { 123 }
         assertEquals 123, closure()
     }
 
     @Test
-    public void canPassArgumentsToClosure() {
+    void canPassArgumentsToClosure() {
         def addNumbers = { int a, int b -> a + b }
         assertEquals 5, addNumbers(2, 3)
     }
 
     @Test
-    public void canUseItToAccessTheOnlyArgument() {
+    void canUseItToAccessTheOnlyArgument() {
         def twice = { 2 * it }
         assertEquals 10, twice(5)
     }
 
     @Test
-    public void canUseCurrying() {
+    void canUseCurrying() {
         def add = { a, b -> a + b }
         def addOne = add.curry(1)
 
@@ -40,7 +40,7 @@ public class ClosuresTest {
     }
 
     @Test
-    public void canUseDelegate() {
+    void canUseDelegate() {
         def closure = { add(2); add(3); }
 
         def list = []
@@ -53,7 +53,7 @@ public class ClosuresTest {
     }
 
     @Test
-    public void canUseMethodReference() {
+    void canUseMethodReference() {
         def list = []
         def addToList = list.&add
         addToList 123

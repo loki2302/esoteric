@@ -3,9 +3,9 @@ package me.loki2302
 import org.junit.Test
 import static org.junit.Assert.*
 
-public class CategoriesTest {
+class CategoriesTest {
     @Test
-    public void canUseCategories() {
+    void canUseCategories() {
         use(NumberCategory) {
             def beers = 10.getBeers()
             assertTrue beers instanceof BeerCount
@@ -17,11 +17,11 @@ public class CategoriesTest {
         }
     }
 
-    public static class BeerCount {
+    static class BeerCount {
         def value
     }
 
-    public static class NumberCategory {
+    static class NumberCategory {
         static BeerCount getBeers(Number self) {
             new BeerCount(value: self)
         }

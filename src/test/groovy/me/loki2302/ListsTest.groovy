@@ -4,9 +4,9 @@ import org.junit.Test
 
 import static org.junit.Assert.*
 
-public class ListsTest {
+class ListsTest {
     @Test
-    public void canHaveList() {
+    void canHaveList() {
         def list = [2, 3, 4]
         assertTrue list instanceof List
         assertEquals 3, list.size()

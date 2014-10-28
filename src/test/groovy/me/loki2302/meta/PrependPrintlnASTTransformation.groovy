@@ -10,7 +10,7 @@ import org.codehaus.groovy.transform.ASTTransformation
 import org.codehaus.groovy.transform.GroovyASTTransformation
 
 @GroovyASTTransformation(phase = CompilePhase.SEMANTIC_ANALYSIS)
-public class PrependPrintlnASTTransformation implements ASTTransformation {
+class PrependPrintlnASTTransformation implements ASTTransformation {
     @Override
     void visit(ASTNode[] nodes, SourceUnit source) {
         if(!nodes) {
