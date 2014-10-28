@@ -15,7 +15,7 @@ public class ToStringTransformationTest {
 
     @ToString
     public static class PersonWithSimpleToString {
-        int id;
-        String name;
+        int id
+        String name
     }
 }
