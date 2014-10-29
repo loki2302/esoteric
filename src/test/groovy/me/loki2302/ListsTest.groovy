@@ -56,4 +56,17 @@ class ListsTest {
         def sum = list.inject(0, { acc, val -> acc + val })
         assertEquals 11 + 22 + 33 + 44, sum
     }
+
+    @Test
+    void canHavePermutations() {
+        def list = [1, 2, 3]
+        def permutations = list.permutations()
+        assertEquals 6, permutations.size()
+        assertTrue permutations.contains([1, 2, 3])
+        assertTrue permutations.contains([1, 3, 2])
+        assertTrue permutations.contains([2, 1, 3])
+        assertTrue permutations.contains([2, 3, 1])
+        assertTrue permutations.contains([3, 1, 2])
+        assertTrue permutations.contains([3, 2, 1])
+    }
 }
