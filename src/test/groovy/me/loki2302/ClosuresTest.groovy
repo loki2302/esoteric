@@ -62,4 +62,21 @@ class ClosuresTest {
         assertEquals 123, list[0]
         assertEquals 222, list[1]
     }
+
+    @Test
+    void canUseClosureDescribedWithAClass() {
+        def closure = new MyVerySpecialAddOneClosure()
+        def result = closure(2)
+        assertEquals 3, result
+    }
+
+    class MyVerySpecialAddOneClosure extends Closure<Integer> {
+        MyVerySpecialAddOneClosure() {
+            super(null)
+        }
+
+        Integer doCall(Integer arg) {
+            return arg + 1
+        }
+    }
 }
