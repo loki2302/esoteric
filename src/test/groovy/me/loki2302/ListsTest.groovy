@@ -58,6 +58,15 @@ class ListsTest {
     }
 
     @Test
+    void canFilterList() {
+        def list = [11, 22, 33, 44]
+        def evens = list.findAll { it % 2 == 0 }
+        assertEquals 2, evens.size()
+        assertEquals 22, evens[0]
+        assertEquals 44, evens[1]
+    }
+
+    @Test
     void canHavePermutations() {
         def list = [1, 2, 3]
         def permutations = list.permutations()
