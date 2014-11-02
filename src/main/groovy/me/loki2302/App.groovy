@@ -5,15 +5,17 @@ import org.codehaus.groovy.control.CompilerConfiguration
 
 class App {
     static void main(String[] args) {
+        CV cv = new CV()
+
         Binding binding = new Binding()
-        binding.setVariable("basic", new Basic())
-        binding.setVariable("projects", new ArrayList<Project>());
+        binding.setVariable("cv", cv)
 
         CompilerConfiguration compilerConfiguration = new CompilerConfiguration()
         compilerConfiguration.setScriptBaseClass(CVScriptBase.name)
 
         GroovyShell groovyShell = new GroovyShell(binding, compilerConfiguration)
-        groovyShell.evaluate('''
+        groovyShell.evaluate(new File("loki2302.cv"))
+        /*groovyShell.evaluate('''
 
 basic {
     name 'loki2302'
@@ -35,20 +37,35 @@ project {
     point 'Coordinated lots of activities'
 }
 
-''')
+''')*/
 
-        Basic basic = (Basic)binding.getVariable("basic")
-        println basic
+        printCV cv
+    }
 
-        List<Project> projects = (List<Project>)binding.getVariable("projects")
-        println projects
+    static void printCV(CV cv) {
+        println 'CV'
+        println cv.basic.name
+        println cv.basic.position
+        println()
+
+        cv.projects.each {
+            println it.name
+            println it.summary
+            it.points.each {
+                println it
+            }
+            println()
+        }
     }
 
     static abstract class CVScriptBase extends Script {
         void basic(Closure closure) {
-            Basic basic = (Basic)getBinding().getVariable("basic")
+            Basic basic = new Basic()
             closure.delegate = basic
             closure()
+
+            CV cv = (CV)getBinding().getVariable("cv")
+            cv.basic = basic
         }
 
         void project(Closure closure) {
@@ -56,9 +73,16 @@ project {
             closure.delegate = project
             closure()
 
-            List<Project> projects = (List<Project>)getBinding().getVariable("projects")
+            CV cv = (CV)getBinding().getVariable("cv")
+            List<Project> projects = cv.projects
             projects.add(project)
         }
+    }
+
+    @ToString
+    static class CV {
+        Basic basic
+        List<Project> projects = []
     }
 
     @ToString(includeNames = true)

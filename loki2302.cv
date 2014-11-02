@@ -1,0 +1,19 @@
+basic {
+    name 'loki2302'
+    position 'developer'
+}
+
+project {
+    name 'Project One'
+    summary 'Summary for project one'
+
+    point 'Developed lots of stuff'
+    point 'Fixed lots of bugs'
+}
+
+project {
+    name 'Project Two'
+    summary 'Summary for project two'
+
+    point 'Coordinated lots of activities'
+}
