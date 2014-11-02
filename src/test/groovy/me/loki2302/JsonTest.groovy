@@ -38,10 +38,4 @@ class JsonTest {
         def json = builder.toString()
         assertEquals '{"name":"loki2302","age":30,"interests":["java","groovy"]}', json
     }
-
-    static class Person {
-        def name
-        def age
-        def interests
-    }
 }
