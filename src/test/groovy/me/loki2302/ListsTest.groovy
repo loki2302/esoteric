@@ -1,5 +1,4 @@
 package me.loki2302
-
 import org.junit.Test
 
 import static org.junit.Assert.*
@@ -77,5 +76,17 @@ class ListsTest {
         assertTrue permutations.contains([2, 3, 1])
         assertTrue permutations.contains([3, 1, 2])
         assertTrue permutations.contains([3, 2, 1])
+    }
+
+    @Test
+    public void canHaveCombinations() {
+        def listA = [11, 22]
+        def listB = ['aa', 'bb']
+        def combinations = [listA, listB].combinations()
+        assertEquals 4, combinations.size()
+        assertTrue combinations.contains([11, 'aa'])
+        assertTrue combinations.contains([11, 'bb'])
+        assertTrue combinations.contains([22, 'aa'])
+        assertTrue combinations.contains([22, 'bb'])
     }
 }
