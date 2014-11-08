@@ -66,6 +66,20 @@ class ListsTest {
     }
 
     @Test
+    void canCountItems() {
+        def list = [11, 22, 33]
+        def itemCount = list.count { it == 22 }
+        assertEquals 1, itemCount
+    }
+
+    @Test
+    void canCheckIfThereAnItemInTheListUsingClosure() {
+        def list = [11, 22, 33]
+        def has22 = list.any { it == 22 }
+        assertTrue has22
+    }
+
+    @Test
     void canHavePermutations() {
         def list = [1, 2, 3]
         def permutations = list.permutations()
