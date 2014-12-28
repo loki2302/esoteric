@@ -59,3 +59,11 @@ fn can_use_if() {
   assert_eq!(222, return_111_if_0_and_222_otherwise(1));
 }
 
+#[test]
+fn can_use_for_loop() {
+  let mut sum: int = 0;
+  for i in range(0i, 10i) {
+    sum += i;
+  }
+  assert_eq!(45, sum);
+}
