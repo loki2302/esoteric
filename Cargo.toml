@@ -1,0 +1,9 @@
+[package]
+
+name = "rust_experiment"
+version = "0.0.1"
+authors = [ "loki2302 <loki2302@loki2302.me>" ]
+
+[[bin]]
+
+name = "rust_experiment"
