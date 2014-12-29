@@ -17,3 +17,4 @@ mod function_tests;
 mod if_tests;
 mod looping_tests;
 mod json_tests;
+mod string_formatting_tests;
