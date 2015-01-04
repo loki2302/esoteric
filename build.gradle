@@ -1,0 +1,40 @@
+buildscript {
+    repositories {
+        jcenter()
+        maven {
+            url 'http://clojars.org/repo'
+        }
+    }
+
+    dependencies {
+        classpath 'clojuresque:clojuresque:1.7.0'
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'clojure'
+apply plugin: 'application'
+apply plugin: 'groovy'
+
+mainClassName = 'me.loki2302.ClojureApp'
+
+repositories {
+    mavenCentral()
+    jcenter()
+    clojarsRepo()
+}
+
+clojure {
+    warnOnReflection = true
+    aotCompile = true
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+    compile 'org.clojure:clojure:1.6.0'
+    compile 'org.codehaus.groovy:groovy-all:2.3.7'
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.2.1'
+}
