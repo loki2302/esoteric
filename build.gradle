@@ -3,7 +3,6 @@ apply plugin: 'application'
 
 mainClassName = "me.loki2302.App"
 
-sourceCompatibility = 1.5
 version = '1.0'
 
 repositories {
@@ -12,5 +11,16 @@ repositories {
 
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.11'
-    compile "org.scala-lang:scala-library:2.11.2"
+    compile "org.scala-lang:scala-library:2.11.4"
+}
+
+test {
+    testLogging {
+        showStandardStreams = true
+        events 'failed', 'passed', 'skipped'
+    }
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.2.1'
 }
