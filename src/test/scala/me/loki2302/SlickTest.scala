@@ -10,10 +10,12 @@ class SlickTest {
 
   @Test
   def canUseSlick(): Unit = {
-    class Notes(tag: Tag) extends Table[(Int, String)](tag, "Notes") {
+    case class Note(id: Int, content: String)
+
+    class Notes(tag: Tag) extends Table[Note](tag, "Notes") {
       def id = column[Int]("Id", O.PrimaryKey)
       def content = column[String]("Content")
-      def * = (id, content)
+      def * = (id, content) <> (Note.tupled, Note.unapply)
     }
     val notes = TableQuery[Notes]
 
@@ -21,23 +23,23 @@ class SlickTest {
       implicit session =>
         notes.ddl.create
 
-        notes += (1, "first")
-        notes += (2, "second")
+        notes += Note(1, "first")
+        notes += Note(2, "second")
         notes ++= Seq(
-          (3, "third"),
-          (4, "fourth"),
-          (5, "fifth")
+          Note(3, "third"),
+          Note(4, "fourth"),
+          Note(5, "fifth")
         )
 
-        notes.insert((6, "sixth"))
-        notes.insert((7, "seventh"))
+        notes.insert(Note(6, "sixth"))
+        notes.insert(Note(7, "seventh"))
 
         val numberOfNotes = notes.length.run
         assertEquals(7, numberOfNotes)
 
         val thirdNote = notes.filter(note => note.id === 3).first
-        assertEquals(3, thirdNote._1)
-        assertEquals("third", thirdNote._2)
+        assertEquals(3, thirdNote.id)
+        assertEquals("third", thirdNote.content)
     }
   }
 
