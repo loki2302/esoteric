@@ -10,6 +10,7 @@ class TraitsTest {
 
     val hasName: HasName = person
     assertEquals("loki2302", hasName.getName())
+    assertEquals("loki2302!", hasName.getNameWithExclamationMark())
 
     val hasAge: HasAge = person
     assertEquals(50, hasAge.getAge())
@@ -17,6 +18,7 @@ class TraitsTest {
 
   trait HasName {
     def getName(): String
+    def getNameWithExclamationMark(): String = getName() + "!"
   }
 
   trait HasAge {
