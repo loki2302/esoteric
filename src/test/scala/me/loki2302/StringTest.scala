@@ -3,7 +3,26 @@ package me.loki2302
 import org.junit.Test
 import org.junit.Assert.assertEquals
 
-class StringInterpolationTest {
+class StringTest {
+  @Test
+  def canUseMultilineStringWithStripMargin(): Unit = {
+    val s =
+      """
+        |line one
+        |line two
+      """.stripMargin.trim
+    assertEquals("line one\nline two", s)
+  }
+
+  @Test
+  def canUseMultilineString(): Unit = {
+    val s = """
+line one
+line two
+""".trim
+    assertEquals("line one\nline two", s)
+  }
+
   @Test
   def canUseStringInterpolation(): Unit = {
     val secret = 2302
