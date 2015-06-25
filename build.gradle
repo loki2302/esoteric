@@ -1,30 +1,20 @@
-apply plugin: 'scala'
-apply plugin: 'application'
-
-mainClassName = "me.loki2302.App"
-
-version = '1.0'
-
-repositories {
-    mavenCentral()
-}
-
-dependencies {
-    testCompile group: 'junit', name: 'junit', version: '4.11'
-    testCompile 'com.typesafe.slick:slick_2.11:2.1.0'
-    testCompile 'org.hsqldb:hsqldb:2.3.2'
-
-    compile 'org.scala-lang:scala-library:2.11.4'
-    compile 'org.scala-lang:scala-reflect:2.11.4'
-}
-
-test {
-    testLogging {
-        showStandardStreams = true
-        events 'failed', 'passed', 'skipped'
-    }
-}
-
 task wrapper(type: Wrapper) {
-    gradleVersion = '2.2.1'
+    gradleVersion = '2.4'
+    distributionUrl = "http://services.gradle.org/distributions/gradle-${gradleVersion}-all.zip"
+}
+
+subprojects {
+    apply plugin: 'scala'
+
+    test {
+        testLogging {
+            showStandardStreams = true
+            events 'failed', 'passed', 'skipped'
+        }
+    }
+
+    dependencies {
+        testCompile group: 'junit', name: 'junit', version: '4.11'
+        compile 'org.scala-lang:scala-library:2.11.7'
+    }
 }
