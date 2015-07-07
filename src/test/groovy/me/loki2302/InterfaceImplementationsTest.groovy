@@ -8,7 +8,7 @@ class InterfaceImplementationsTest {
     public void canUseClosureToImplementInterface() {
         I obj = { Object[] args -> "$args".toString() } as I
 
-        assertEquals 'null', obj.func()
+        assertEquals '[]', obj.func()
         assertEquals '[123]', obj.otherFunc(123)
     }
 
