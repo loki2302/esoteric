@@ -29,4 +29,16 @@ class CollectionsTest {
     val list = List(11, 22, 33, 44).filter(_ % 2 == 0)
     assertEquals(List(22, 44), list)
   }
+
+  @Test
+  def canCheckIfExists(): Unit = {
+    val atLeastOneEvenElementExists = List(11, 22, 33, 44).exists(_ % 2 == 0)
+    assertTrue(atLeastOneEvenElementExists)
+  }
+
+  @Test
+  def canCount(): Unit = {
+    val count = List(11, 22, 33, 44).count(_ % 2 == 0)
+    assertEquals(2, count)
+  }
 }
