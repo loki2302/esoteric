@@ -1,0 +1,25 @@
+apply plugin: 'groovy'
+apply plugin: 'application'
+
+mainClassName = 'me.loki2302.App'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile 'junit:junit:4.11'
+    testCompile 'org.hsqldb:hsqldb:2.3.2'
+    compile 'org.codehaus.groovy:groovy-all:2.4.3'
+}
+
+test {
+    testLogging {
+        showStandardStreams = true
+        events 'failed', 'passed', 'skipped'
+    }
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.4'
+}
