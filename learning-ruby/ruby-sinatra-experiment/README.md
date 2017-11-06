@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-# esoteric
-=======
 ruby-sinatra-experiment
 =======================
 
@@ -9,4 +6,3 @@ ruby-sinatra-experiment
 Requires having `sinatra` and `json` installed.
 
 This app is now available on heroku: http://ruby-sinatra-experiment.herokuapp.com/
->>>>>>> sinatra/master
