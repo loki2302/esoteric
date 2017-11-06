@@ -1,0 +1,16 @@
+apply plugin: 'scala'
+apply plugin: 'application'
+
+mainClassName = 'me.loki2302.springapp.App'
+
+sourceCompatibility = 1.5
+version = '1.0'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile 'org.springframework.boot:spring-boot-starter-test:1.2.4.RELEASE'
+    compile 'org.springframework.boot:spring-boot-starter-web:1.2.4.RELEASE'
+}
