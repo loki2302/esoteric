@@ -1,20 +1,10 @@
-# learning-python
+Prerequisites:
 
-### Machine scope
+* Have [pyenv](https://github.com/pyenv/pyenv) installed
+* Have [pipenv](https://github.com/pypa/pipenv) installed
 
-* On Ubuntu 17.04 Python3 should be installed by default.
-* Install pip: `sudo apt install -y python3-pip` and check it: `pip3 --version`
-* Install virtualenv: `sudo pip3 install virtualenv` and check it: `virtualenv --version`
+To run the tests:
 
-### Project scope
-
-* Create environment: `virtualenv myenv1` -- this will create a directory `myenv1`
-* Activate environment: `source myenv1/bin/activate`
-* Deactivate environment: `deactivate`
-* Delete environment: `rm -rf ./myenv1`
-
-### Development scope
-
-* Add a library: `pip install requests`
-* Remember libraries: `pip freeze >requirements.txt`
-* Remove a library: `pip uninstall requests`
+* (if 3.7.0 is not installed yet) `pyenv install 3.7.0`
+* `pipenv install --dev` (install all dependencies, including the dev dependencies)
+* Either `pipenv run pytest` or `pipenv shell` and then `pytest`
