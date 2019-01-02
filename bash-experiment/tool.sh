@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# https://medium.com/@Drew_Stokes/bash-argument-parsing-54f3b81a6a8f
+
 # ./tool.sh --set-a 123 -b 222 -c xxx
 
 while (( "$#" )); do
